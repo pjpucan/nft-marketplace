@@ -1,0 +1,23 @@
+// Make sure to use a unique identifier for the styles here so that it will only take effect for this block.
+// E.G. ".block_folderBlockName"
+
+.block_subscribe {
+    .form-subscribe{
+        @apply block lg:flex #{!important};
+
+        h2{
+            @apply text-4xl mb-2.5 #{!important};
+        }
+        .wpcf7-form-control-wrap{
+            input{
+                @apply w-full px-8 py-4 rounded-[20px] text-d-black placeholder-black;
+            }
+        }
+    
+        .wpcf7-submit{
+            @apply px-[50px] ml-0 lg:-ml-[50px] w-full lg:w-auto mt-4 lg:mt-0 #{!important};
+        }
+
+       
+    }
+}

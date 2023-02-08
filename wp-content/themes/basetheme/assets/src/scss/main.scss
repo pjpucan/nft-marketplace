@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @font-face {
+//     font-family: 'GothamBook';
+//     src: url('../../fonts/GothamBook.eot'); /* IE9 Compat Modes */
+//     src: url('../../fonts/GothamBook.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('../../fonts/GothamBook.woff2') format('woff2'), /* Super Modern Browsers */
+//          url('../../fonts/GothamBook.woff') format('woff'), /* Pretty Modern Browsers */
+//          url('../../fonts/GothamBook.ttf')  format('truetype'); /* Safari, Android, iOS */
+// }
+
+input, textarea, button, select{
+	@apply focus:outline-none outline-none;
+}
+
+.grecaptcha-badge {
+    display: none !important;
+}
+
+html{
+	-webkit-tap-highlight-color: transparent;
+	animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-webkit-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	// scroll-behavior: smooth;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@apply text-white text-base;
+}
+
+.primary-button{
+	@apply bg-primary px-8 py-4 rounded-[20px];
+}
+
+.button-white{
+	@apply bg-white text-black px-8 py-4 rounded-[20px] hover:text-primary transition-all duration-300 ease-in-out;
+}
+
+.primary-outline-button{
+	@apply border-2 border-primary px-8 py-4 rounded-[20px] hover:text-primary transition-all duration-300 ease-in-out;
+}
+
+nav{
+	ul{
+		@apply absolute lg:relative w-full left-0 bg-l-black lg:bg-d-black lg:flex items-center top-full h-0 lg:h-auto overflow-hidden;
+
+		li{
+			@apply mx-6 my-6 lg:my-0;
+
+			&.primary-button{
+				a{
+					@apply flex items-center;
+					.dashicons {
+						@apply mr-2;	
+					}
+				}
+			}
+		}
+	}
+}
+
+footer{
+	#menu-footer-menu{
+		li{
+			a{
+				@apply inline-block mb-5 text-base text-l-gray hover:text-primary transition-all duration-300 ease-in-out;
+			}
+
+			&:last-child{
+				a{
+					@apply mb-0;
+				}
+			}
+
+		}
+	}
+}
+
+// GLOBAL CF7 CSS
+.wpcf7 {
+	form{
+		.wpcf7-form-control-wrap{
+			input, textarea{
+				&.wpcf7-not-valid{
+					@apply border border-rose-600 #{!important};
+				}
+			}
+			.wpcf7-not-valid-tip{
+				@apply hidden #{!important};
+			}
+		}
+	}
+}
+
+
+// SUBSCRIBE CF7 CSS
+.form-subscribe{
+	@apply md:flex relative;
+	.wpcf7-form-control-wrap{
+		input{
+			@apply w-full px-8 py-4 rounded-[20px] text-d-black placeholder-black;
+		}
+	}
+
+	.wpcf7-submit{
+		@extend .primary-button;
+		@apply px-[50px] md:-ml-[50px] w-full md:w-auto mt-6 md:mt-0;
+		z-index: 1;
+	}
+}
